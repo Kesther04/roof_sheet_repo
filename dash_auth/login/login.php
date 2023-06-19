@@ -42,6 +42,7 @@
                     <td id="tock">
                         <input type="checkbox" >VIEW PASSWORD
                     </td>
+                    
                 </tr>
 
                 <script src="../../js/jquery.js"></script>

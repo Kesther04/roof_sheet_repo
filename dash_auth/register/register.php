@@ -13,7 +13,7 @@
 
     
             
-            <h1>REGISTER</h1>
+        <h1>REGISTER</h1>
     
             
         <?php
@@ -27,13 +27,13 @@
             
                 <tr>
                     <td>USERNAME:</td>  
-                    <td><input type="text"  name="uname" required></td>
+                    <td><input type="text"  name="uname" placeholder="Enter Your Username" required></td>
                 </tr>
     
                 
                 <tr>
                     <td>EMAIL ADDRESS:</td>   
-                    <td><input type="text"  name="email" required></td>
+                    <td><input type="text"  name="email" placeholder="Enter Your Email Address" required></td>
                 </tr>
     
                 <tr>
@@ -41,7 +41,7 @@
     
                     <td>
                     <span>
-                        <input type="password"  name="pass" id="p-p-p"  required>
+                        <input type="password"  name="pass" id="p-p-p" placeholder="Enter Your Password"  required>
                     </span>
                     
                     <span id="p-a-t">
@@ -55,7 +55,7 @@
     
                 <tr>
                     <td>PHONE NUMBER:</td>     
-                    <td><input type="number"  name="pno" required></td>
+                    <td><input type="number"  name="pno" placeholder="Enter Your Phone Number" required></td>
                 </tr>
     
             </table>
