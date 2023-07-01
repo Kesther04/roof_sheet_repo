@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
 
     if (empty($unemail)) {
-        header("location:login?msg=ENTER YOUR EMAIL ADDRESS OR USERNAME");
+        echo "<script>window.location='../../?msg=ENTER YOUR EMAIL ADDRESS OR USERNAME'</script>";
     }
     elseif (empty($pass)) {
-        header("location:login?msg=ENTER YOUR PASSWORD");
+        echo "<script>window.location='../../?msg=ENTER YOUR PASSWORD'</script>";
     }
     elseif (filter_var($unemail,FILTER_VALIDATE_EMAIL)) {
         //to select from the database where email and password provided are available
@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
             $_SESSION['name'] = $row['username'];
             $_SESSION['pno'] = $row['phone_no'];
     
-            header("location:../../dashboard/user/profile");
+            echo "<script>window.location='../../dashboard/'</script>";
         }else {
-            header("location:login?msg=INCORRECT EMAIL OR PASSWORD");
+            echo "<script>window.location='../../?msg=INCORRECT EMAIL OR PASSWORD'</script>";
         }
     }else {
         //to select from the database where username and password provided are available
@@ -43,9 +43,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
             $_SESSION['name'] = $row['username'];
             $_SESSION['pno'] = $row['phone_no'];
     
-            header("location:../../dashboard/user/profile");
+            echo "<script>window.location='../../dashboard/'</script>";
         }else {
-            header("location:login?msg=INCORRECT EMAIL OR PASSWORD");
+            echo "<script>window.location='../../?msg=INCORRECT USERNAME OR PASSWORD'</script>";
         }
     }
 }

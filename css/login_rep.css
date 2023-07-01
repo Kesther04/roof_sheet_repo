@@ -53,15 +53,20 @@
     .login-sec{
         width:100%;
         height:auto;
+        margin:15px 5px;
+        padding:0px;
     }
 
     .login-sec table{
-        margin:20px;
+        margin:0px;
+        padding:0px;
     }
 
     .login-sec table tr td{
         width:100%;
         float: left;
+        padding: 5px;
+        margin:0px;
     }
 
 

@@ -1,1 +1,3 @@
-<?php  header("location:../"); ?>
+<script>
+    window.location("../../");
+</script>
