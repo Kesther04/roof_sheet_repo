@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $ins_con = $ins_ob->ins_sales_reg($rid,$clname,$clphone,$cladd,$itm,$qty,$unit,$tot,$instal,$acces,$tprt,$fullDate,$date,$time);
     if ($ins_con) {
            
-        echo "<script>window.location='../receipt.php?rd=$rid'</script>";
+        echo "<script>window.location='../invoice.php?rd=$rid'</script>";
            
     }else {
         echo "<script>window.location='../sales_reg.php?msg=Sales was not recorded'</script>";
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
 function pint(){
     $len = 9;
-    $char = '1234567890';
+    $char = '123456789';
     $pin = '';
     
     for ($i=0; $i <=$len; $i++) {

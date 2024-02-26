@@ -19,6 +19,22 @@
             return $ins;
         }
 
+        public function ins_recp($rid,$cname,$pmtd,$prod,$total,$wname,$fullDay,$date,$time){
+            require("db/database_connection.php");
+
+            $ins = $con->query("INSERT INTO receipt_tb(ref_id,customer_name,pmtd,products,total,writer_name,fullDay,date,time)VALUE('$rid','$cname','$pmtd','$prod','$total','$wname','$fullDay','$date','$time')");
+
+            return $ins;
+        }
+
+        public function ins_receipt($rid,$client,$address,$phone,$pmtd,$purpose,$total,$amt,$bal,$writer,$fullDate,$date,$time){
+            require("db/database_connection.php");
+
+            $ins = $con->query("INSERT INTO house_receipts(ref_id,customer_name,customer_address,phone_no,pmtd,pur_pose,total_amt,amt_paid,amt_rem,writer_name,fullDay,date,time)VALUE('$rid','$client','$address','$phone','$pmtd','$purpose','$total','$amt','$bal','$writer','$fullDate','$date','$time')");
+
+            return $ins;
+        }
+
         public function ins_quota($rfid,$quot,$locat,$clname,$itm,$qty,$unit,$tot,$instal,$acces,$tprt,$wnm,$qdeson,$desnmon,$despropon,$qdestw,$desnmtw,$desproptw,$fullDay,$date,$time){
             require("db/database_connection.php");
 
@@ -27,8 +43,9 @@
             return $ins;
         }
 
-
        
     }
 
+   
+    
 ?>

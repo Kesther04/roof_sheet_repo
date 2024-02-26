@@ -27,6 +27,22 @@
         <div class="dash-b">
             <a href="sales_reg.php">
                 <span>
+                    <img src="../images/item_upload.svg"  class="fir-img"><img src="../images/lblog.svg" class="sec-img" >MAKE INVOICE
+                </span>
+            </a>
+        </div>
+
+        <div class="dash-b">
+            <a href="view_invoice.php">
+                <span>
+                <img src="../images/save-fill.svg"  class="fir-img"><img src="../images/save.svg" class="sec-img">VIEW INVOICE
+                </span>
+            </a>
+        </div>
+
+        <div class="dash-b">
+            <a href="receipt_reg.php">
+                <span>
                     <img src="../images/item_upload.svg"  class="fir-img"><img src="../images/lblog.svg" class="sec-img" >MAKE RECEIPT
                 </span>
             </a>
@@ -35,7 +51,23 @@
         <div class="dash-b">
             <a href="view_receipt.php">
                 <span>
-                <img src="../images/save-fill.svg"  class="fir-img"><img src="../images/save.svg" class="sec-img">VIEW RECEIPTS
+                <img src="../images/save-fill.svg"  class="fir-img"><img src="../images/save.svg" class="sec-img">VIEW RECEIPT
+                </span>
+            </a>
+        </div>
+
+        <div class="dash-b">
+            <a href="house_rent_receipt.php">
+                <span>
+                    <img src="../images/item_upload.svg"  class="fir-img"><img src="../images/lblog.svg" class="sec-img" >HOUSE RENT RECEIPT
+                </span>
+            </a>
+        </div>
+
+        <div class="dash-b">
+            <a href="view_house_receipt.php">
+                <span>
+                <img src="../images/save-fill.svg"  class="fir-img"><img src="../images/save.svg" class="sec-img">VIEW HOUSE RECEIPT
                 </span>
             </a>
         </div>

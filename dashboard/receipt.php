@@ -5,204 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/sdash.css" media="all">
-    <!-- <link rel="stylesheet" href="../css/sdash_rep.css" media="all"> -->
     <script src="../js/jquery.js"></script>
     <script src="../js/snd_dash.js"></script>
     <script src="../js/feat.js"></script>
-    <script src="../js/ajax.js"></script>
-    <title>RECEIPT</title>
+    <title>DASHBOARD</title>
 </head>
 <body onload="window.print()">
-    
 
-<section class="recp-div-container">
+    <div class="bf-top-line-recp">
+        <div class="top-line-recp-container">
 
-    
-    <?php
-        require("../class/sel_class.php");
-        $sel_ob = new SEL();
-        $id = $_GET['rd'];
-        $sel_con = $sel_ob->sel_sales_rid($id);
-        if ($sel_con) {
-            $row = $sel_con->fetch_assoc();
-        
-    ?>
-    <div class="top-line-div-container">
-
-        <div class="header">
-            <div class="fst-hd">PEC ALUMINIUM DESIGNERS</div>
-            <div class="snd-hd">Long span roofing,sheet,PVC ceiling, accesories and installations</div>
-        </div>
-
-        <div class="af-header">
-            <div class="logo"><img src="../images/logo.png"></div>
-
-            <div>
-                Nwadigo Junction Igbeagu Izzi,<br>
-                Along Abakaliki Expressway,<br>
-                Ebonyi State.<br>
-                08066528601/08054540473
-            </div>
-        </div>
-
-        <hr style="height:15px;background:rgb(37, 75, 200);">
-
-    </div>
-
-
-        <div class="fir-div-container">
-
-            <div class="rep-header">
-                <table class="comp-info-rep">
-                    <tr><td>Address:</td></tr>
-                    <tr><td>Opposite Ebonyi Hotel,Abakaliki Ebonyi State</td></tr>
-                </table>
-
-                <div class="inner-rep-header">INVOICE</div>
+            <div class="header">
+                <div class="logo"><img src="../images/logo.png"></div>
+                <div class="con-fst-snd-nd">
+                    <div class="fst-hd"> PEC ALUMINIUM DESIGNERS</div>
+                    <div class="snd-hd">Long span roofing,sheet,PVC ceiling, accesories and installations</div>
+                </div>
             </div>
 
-            <div class="otter-info">
-                <table class="user-info-rep">
-                    <tr><td>Invoice To:</td></tr>
-                    <tr><td><span>Name:</span><?php echo $row['cl_name']; ?></td></tr>
-                    <tr><td><span>Address:</span><?php echo $row['cl_add']; ?></td></tr>
-                    <tr><td><span>Contact No.:</span><?php echo $row['cl_phone']; ?></td></tr>
-                </table>
-
-                <div class="oi-dat">
-                    Date:<?php echo $row['date']; ?>
+            <div class="af-header">
+                <div>
+                    BRANCH OFFICE<br>
+                    New Timber Shade,<br>
+                    Abakaliki Ebonyi State
                 </div>
 
+                <div>
+                    3 Obiora Arinze Street,Emene<br>
+                    Enugu East L.G.A Enugu State<br>
+                    Tel: 08066528601,08024557122<br>
+                    e-mail-Chidihisgrace@yahoo.com
+                </div>
             </div>
-            <table class="main-info-rep">
 
-                <thead>
-                    <tr>
-                        <td>Description of Items</td>
-                        <td>Quantity</td>
-                        <td>Unit Price(<strike>N</strike>)</td>
-                        <td>Amount(<strike>N</strike>)</td>
-                    </tr>
-                </thead>
-
-                
-
-                <tbody>
-                    <?php
-
-                        $itm = explode("-|-",$row['itm']);
-                        $qty = explode("-|-",$row['qty']);
-                        $unit = explode("-|-",$row['aunit']);
-                        foreach ($itm as $key => $value) {
-                            
-                    ?>
-                    <tr>
-                        <td><?php echo $value; ?></td>
-                        <td><?php echo number_format($qty[$key],0); ?></td>
-                        <td><?php echo number_format($unit[$key],2); ?></td>
-                        <?php $amt = $qty[$key]*$unit[$key]; ?>
-                        <td><?php echo number_format($amt,2); ?></td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-                
-
-                <tfoot>
-                    <tr class="tbold">
-                        <td colspan="3">Total</td>
-                        <td><?php echo number_format($row['total'],2); ?></td>
-                    </tr>
-
+            <hr style="height:5px;background:rgb(37, 75, 200);">
+            <div class="main-con">
+                <?php 
+                    $rid = $_GET['rd'];
+                    require("../class/sel_class.php");
+                    $sel_ob = new SEL();
+                    $sel_con = $sel_ob->sel_recp($rid);
+                    if ($sel_con) {
+                        $row = $sel_con->fetch_assoc();
                     
+                ?>
+                <div class="fst-inner-main-con">
+                    <div id="recp-head">Official Receipt</div>
+                    <div class="af-recp-head">NO.<?php echo $row['ref_id']; ?></div>
+                    <div class="af-recp-head">DATE:<?php echo $row['date']; ?></div>
+                </div>
+                
+                <div class="snd-inner-main-con">
+                    <div class="simc-con">
+                        <div class="small-simc-con">Received From</div>
+                        <div class="big-simc-con"><?php echo $row['customer_name']; ?></div>
+                    </div>
+                    <div class="simc-con">
+                        <div class="small-simc-con">The Sum Of</div>
+                        <div class="big-simc-con"><?php echo '<strike>N</strike>'.$row['total']; ?></div>
+                    </div>
+                    <div class="simc-con">
+                        <div class="small-big-simc-con">By <?php echo $row['pmtd']; ?></div>
+                        <div class="small-big-simc-con">Drawn On: <?php echo $row['date']; ?></div>
+                    </div>
+                    <div class="simc-con">
+                        <div class="small-simc-con">Being</div>
+                        <div class="big-simc-con"><?php echo $row['products']; ?></div>
+                    </div>
+                </div>
 
-                </tfoot>
-
-            </table>
-
-            <table class="main-info-rep">
-                <tfoot>
-                    <tr>
-                        <td colspan="3">Installation</td>
-                        <td></td>
-                        <td><?php echo number_format($row['instal'],2); ?></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="3">Accessories</td>
-                        <td></td>
-                        <td><?php echo number_format($row['acces'],2); ?></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="3">Transportation & Handling</td>
-                        <td></td>
-                        <td><?php echo number_format($row['transprt'],2); ?></td>
-                    </tr>
-
-                    <tr class="tbold">
-                        <td colspan="3">Total</td>
-                        <td></td>
-                        <td>
-                            <?php 
-                                $total_iat = $row['instal']+$row['acces']+$row['transprt']; 
-                                echo number_format($total_iat,2);
-                            ?>
-                        </td>
-                    </tr>
-
-                    
-                </tfoot>
-            </table>
-
-            <table class="main-info-rep">
-                <tfoot>
-                    <tr class="tbold">
-                        
-                        <td colspan="4">Grand Total</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <?php
-                                $bgr = $row['total'] + $total_iat;
-                                echo number_format($bgr,2); 
-                            ?>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-
-            <table class="main-info-rep">
-                <tfoot>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>REFERENCE ID</td>
-                        <td><?php echo $row['ref_id']; ?></td>
-                    </tr>
-                </tfoot>
-            </table>
-
+                <div class="thr-inner-main-con">
+                    <div class="timc-con">
+                        <div></div>
+                        For PecAluminium Designers
+                    </div>
+                </div>
+                <?php  } ?>
+            </div>
         </div>
-    
-    <?php } ?>
-
-    <div class="inner-masag-cot-back" title="back to page">
-        <a href="sales_reg.php">
-            <img src="../images/arro.svg" width="30" class="sec-img">
-            <img src="../images/arro-fill.svg" width="30" class="fir-img">
-        </a>
     </div>
-
-</section>
-
     <script src="../js/metr.js"></script>
     
 </body>

@@ -78,6 +78,43 @@
         echo "<p>quot table not created</p>";
     }
 
+    //for creating table for recording receipts
+    $recp_tb = $con->query("CREATE TABLE if not exists receipt_tb
+    (id int(100)not null primary key auto_increment,
+    ref_id int(100)not null,
+    customer_name varchar(120)not null,
+    pmtd varchar(120)not null,
+    products text not null,
+    total text not null,
+    writer_name varchar(200)not null,
+    fullDay varchar(20)not null,
+    date varchar(20)not null,
+    time varchar(20)not null)ENGINE=innoDB");
+    if ($recp_tb) {
+        echo "Receipt_tb Created";
+    }else {
+        echo "Receipt_tb Not Created";
+    }
 
-   
+    //for creating table for recording house rent receipts
+    $houserecp_tb = $con->query("CREATE TABLE if not exists house_receipts
+    (id int(100)not null primary key auto_increment,
+    ref_id int(100)not null,
+    customer_name varchar(200)not null,
+    customer_address text not null,
+    phone_no varchar(100)not  null,
+    pmtd varchar(120)not null,
+    pur_pose text not null,
+    total_amt text not null,
+    amt_paid text not null,
+    amt_rem text not null,
+    writer_name varchar(200)not null,
+    fullDay varchar(20)not null,
+    date varchar(20)not null,
+    time varchar(20)not null)ENGINE=innoDB");
+    if ($houserecp_tb) {
+        echo "Receipt_tb Created";
+    }else {
+        echo "Receipt_tb Not Created";
+    }
 ?>

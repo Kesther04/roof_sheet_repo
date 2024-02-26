@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
 function pint(){
     $len = 9;
-    $char = '1234567890';
+    $char = '123456789';
     $pin = '';
     
     for ($i=0; $i <=$len; $i++) {

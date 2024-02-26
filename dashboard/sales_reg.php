@@ -29,7 +29,7 @@
         
             ?>
 
-            <h1>MAKE RECEIPT</h1>
+            <h1>MAKE INVOICE</h1>
 
     
             <div class="fir-div-container">
@@ -123,7 +123,7 @@
             </div>
             
             <div class="con-btn-div">
-                <button class="con-btn">SELL</button>
+                <button class="con-btn">CREATE</button>
             </div>
     
 

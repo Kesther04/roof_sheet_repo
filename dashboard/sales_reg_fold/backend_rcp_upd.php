@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $up_con = $up_ob->upd_sales_reg($clname,$clphone,$cladd,$itm,$qty,$unit,$tot,$instal,$acces,$tprt,$rid,$id);
     if ($up_con) {
        
-        echo "<script>window.location='../receipt.php?rd=$rid'</script>";
+        echo "<script>window.location='../invoice.php?rd=$rid'</script>";
         
     }else {
         echo "<script>window.location='../rcp_upd.php?rd=$rid&msg=Sales was not recorded'</script>";

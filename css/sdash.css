@@ -27,6 +27,7 @@ a{
     position: fixed;top:0;
     /* background:rgb(37, 75, 200); */
     background: rgb(0, 0, 168);
+    overflow: auto;
 }
 
 .dash-logo{
@@ -443,6 +444,75 @@ a{
 }
 
 
+.receipt{
+    border:1px solid black;
+    font-weight: bold;
+    font-size: 20px;
+    width:100%;
+    padding:20px;
+}
+
+.receipt span{
+    font-weight: lighter;
+}
+
+.first-div-receipt h1{
+    text-align: center;
+    color:navy;
+}
+
+.first-div-receipt p{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.first-div-receipt span{
+    border:5px solid gray;
+    margin:5px;
+    padding:5px;
+}
+
+
+.second-div-receipt p{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+}
+
+.second-div-receipt span{
+    border:5px solid gray;
+    margin:5px;
+    padding:5px;
+}
+
+.third-div-receipt table{
+    width:100%;
+}
+
+.third-div-receipt table tr td{
+    padding:20px;
+    border:1px solid black;
+}
+
+.forth-div-receipt p{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    width:100%;
+}
+
+.forth-div-receipt span{
+    border:5px solid gray;
+    margin:5px;
+    padding:5px;
+}
+
+
 .secun-div-container table{
     margin:10px;
     border:0px solid green;
@@ -626,6 +696,137 @@ a{
     color: navy;
 }
 
+.bf-top-line-recp{
+    background-image: url(../images/rep_bit.png);
+    background-repeat: repeat;
+    background-size: 100%;
+    height:auto;
+    width:100%;
+}
+
+.top-line-recp-container{
+    font-weight: bold;
+    width:100%;
+    height:auto;
+}
+
+.top-line-recp-container .header{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+
+.top-line-recp-container .header .logo{
+    margin:0px 0px 0px 0px;
+    width:100px;
+    height:70px;
+}
+
+.top-line-recp-container .header .logo img{
+    width:100%;
+    height:100%;
+}
+
+.top-line-recp-container .header .con-fst-snd-nd{
+    width:90%;
+
+}
+
+.top-line-recp-container .header .fst-hd{
+    width:100%;
+    font-size: 40px;
+    text-align: center;
+    /* color: rgba(49, 46, 140); */
+    color:navy;
+}
+
+.top-line-recp-container .header .snd-hd{
+    text-align: center;
+    width:100%;
+    /* color: rgba(49, 46, 140); */
+    color: navy;
+}
+
+
+.top-line-recp-container .af-header{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    /* color: rgba(49, 46, 140); */
+    color: navy;
+}
+
+.top-line-recp-container .main-con{
+    width:100%;
+    height:auto;
+}
+
+.top-line-recp-container .main-con #recp-head{
+    text-align: center;
+    padding:20px;
+    background: navy;
+    color:white;
+    width:30%;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.top-line-recp-container .main-con .fst-inner-main-con{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.top-line-recp-container .main-con .snd-inner-main-con{
+    width:100%;
+    font-size: 25px;
+}
+
+.top-line-recp-container .main-con .af-recp-head{
+    width:30%;
+    font-size: 25px;
+    text-align: center;
+    padding:20px;
+    border:5px solid gray;
+}
+
+.top-line-recp-container .simc-con{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0px;
+}
+
+.top-line-recp-container .simc-con .small-simc-con{
+    width:15%;
+    padding:10px 0px;
+}
+
+.top-line-recp-container .simc-con .big-simc-con{
+    width:80%;
+    border:5px solid grey;
+    padding:10px 5px;
+}
+
+
+.top-line-recp-container .simc-con .small-big-simc-con{
+    width:40%;
+    border:5px solid grey;
+    padding:10px 0px;
+}
+
+.top-line-recp-container .thr-inner-main-con{
+    justify-content: flex-end;
+    font-size: 25px;
+    display: flex;
+}
+
+.top-line-recp-container .thr-inner-main-con .timc-con div{
+    border-bottom: 2px solid gray;
+    padding:20px;
+}
+
 .next-line-div-container{
     padding:20px;
 }
@@ -797,6 +998,34 @@ a{
 }
 
 .rem-fsi button{
+    background: none;
+    outline:none;
+    border:0px solid rgba(50,50,50,0.6);
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+.hrecp-fsi{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.recp-fsi{
+    width:5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.recp-fsi button{
     background: none;
     outline:none;
     border:0px solid rgba(50,50,50,0.6);

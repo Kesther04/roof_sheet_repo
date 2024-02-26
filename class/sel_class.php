@@ -57,10 +57,44 @@
             return $sel;
         }
 
+        public function sel_recp_all(){
+            require("db/database_connection.php");
+            
+            $sel = $con->query(" SELECT * FROM receipt_tb  ");
+    
+            return $sel;
+        }
+
+        public function sel_house_recp_all(){
+            require("db/database_connection.php");
+            
+            $sel = $con->query(" SELECT * FROM house_receipts  ");
+    
+            return $sel;
+        }
+
+        
+
         public function sel_quot($id){
             require("db/database_connection.php");
             
             $sel = $con->query(" SELECT * FROM quota_table  WHERE ref_id = '$id'  ");
+    
+            return $sel;
+        }
+
+        public function sel_recp($id){
+            require("db/database_connection.php");
+            
+            $sel = $con->query(" SELECT * FROM receipt_tb  WHERE ref_id = '$id'  ");
+    
+            return $sel;
+        }
+
+        public function sel_house_recp($id){
+            require("db/database_connection.php");
+            
+            $sel = $con->query(" SELECT * FROM house_receipts  WHERE ref_id = '$id'  ");
     
             return $sel;
         }

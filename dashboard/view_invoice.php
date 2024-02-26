@@ -38,18 +38,19 @@
 
         <div class="sec-div-container">
 
-            <h1>RECEIPT RECORDS</h1>
+            <h1>INVOICE RECORDS</h1>
     
             <div class="secun-div-container">
                 <table class="myTable">
                     <thead>
                         <tr id="top-line-div-table">
                             <th>REFERENCE_ID</th>
-                            <th>RECEIVED FROM</th>
-                            <th>STATEMENT</th>
+                            <th>CUSTOMER</th>
+                            <th>CONTACT_NO.</th>
                             <th>DATE_RECORDED</th>
                             <th>PRINT</th>
                             <th>DOWNLOADS</th>
+                            <th>UPDATE</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -58,19 +59,24 @@
                         <?php  
                             require("../class/sel_class.php");
                             $sel_ob = new SEL();
-                            $sel_con = $sel_ob->sel_recp_all();
+                            $sel_con = $sel_ob->sel_sales_all();
                             if ($sel_con) {while ($row = $sel_con->fetch_assoc()) {
                     
                         ?>
                         <tr>
                             <td><?php echo $row['ref_id']; ?></td>
-                            <td><?php echo $row['customer_name']; ?></td>
-                            <td><?php echo $row['products']; ?></td>
+                            <td><?php echo $row['cl_name']; ?></td>
+                            <td><?php echo $row['cl_phone']; ?></td>
                             <td><?php echo $row['date']; ?></td>
-                            <td><button class="cond-btn" onclick="window.open('receipt.php?rd=<?php echo $row['ref_id'] ?>', '_blank', 'width=500')">PRINT</button></td>
+                            <td><button class="cond-btn" onclick="window.open('invoice.php?rd=<?php echo $row['ref_id'] ?>', '_blank', 'width=500')">PRINT</button></td>
                             <td><button class="cond-btn">DOWNLOAD</button></td>
+                            <td title="Make Changes to the receipt already made">
+                                <a href="rcp_upd.php?rd=<?php echo $row['ref_id']; ?>">
+                                    <button class="cond-btn">UPDATE</button>
+                                </a>
+                            </td>
                             <td title="Delete Receipt">
-                                <form class="recp-fsi" action="sales_reg_fold/receipt_del.php" method="post">
+                                <form class="rem-fsi" action="sales_reg_fold/rcp_del.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>" required readonly>
                                     <input type="hidden" name="rid" value="<?php echo $row['ref_id']; ?>" required readonly>
                                     <button>&times;</button>
